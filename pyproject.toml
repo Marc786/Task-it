@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "fastapi-template"
+version = "0.1.0"
+description = ""
+authors = ["Marc-Antoine Marier <marc-antoine.marier.1@ulaval.ca>"]
+readme = "README.md"
+packages = [{include = "fastapi_template"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+colorlog = "^6.8.2"
+fastapi = "^0.111.0"
+pydantic = "^2.7.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+ruff = "^0.4.5"
+pytest = "^8.2.1"
+pyright = "^1.1.364"
+coverage = "^7.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py312"
+select = ["F", "E", "W", "I001", "ASYNC", "T20"]
+ignore = ["E711", "E712", "E722", "E501"]
+fixable = ["F541", "E731", "I", "W", "F"]
+
+[tool.ruff.isort]
+known-third-party = ["xpectio_schemas"]
+
+[tool.coverage.run]
+omit = [
+    "*/__init__.py",
+]
