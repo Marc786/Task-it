@@ -7,7 +7,7 @@ from task_api.http.response.exception_response import ExceptionResponse
 logger = Logger.get_logger()
 
 
-async def variant_also_negotiate_handler(
+async def server_config_exception_handler(
         request: Request, exc: Exception
 ) -> JSONResponse:
     logger.info(
@@ -18,7 +18,7 @@ async def variant_also_negotiate_handler(
     return JSONResponse(
         status_code=status.HTTP_506_VARIANT_ALSO_NEGOTIATES,
         content=ExceptionResponse(
-            detail=exc,
+            detail=str(exc),
             request=request.url.path,
-        ),
+        ).model_dump(),
     )

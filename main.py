@@ -2,11 +2,11 @@ import argparse
 
 from task_api import app_launcher
 from task_api.config.context.application_context import ApplicationContext
-from fastapi_template import DevelopmentContext
-from task_api.config.context import Environment
+from task_api.config.context.application_context import Environment
+from task_api.config.context.development_context import DevelopmentContext
 from task_api.config.context.production_context import ProductionContext
 from task_api.config.logger import logger_type
-from task_api.config.logger import Logger
+from task_api.config.logger.logger import Logger
 
 
 logger = Logger.get_logger()

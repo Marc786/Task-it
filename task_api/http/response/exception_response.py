@@ -2,5 +2,5 @@ from pydantic import BaseModel
 
 
 class ExceptionResponse(BaseModel):
-    detail: str
     request: str
+    detail: str

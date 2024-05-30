@@ -1,0 +1,2 @@
+class ItemAlreadyExistsException(Exception):
+    pass

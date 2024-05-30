@@ -6,7 +6,7 @@ from task_api.core.user.domain.user_id import UserId
 
 class UserRepository(ABC):
     @abstractmethod
-    def find_by_id(self, user_id: UserId) -> User:
+    def find_by_username(self, username: UserId) -> User:
         pass
 
     @abstractmethod
