@@ -1,9 +1,9 @@
 class Email:
     __email: str
-    
+
     def __init__(self, email: str):
         self.__email = email
-    
+
     def __str__(self) -> str:
         return self.__email
 

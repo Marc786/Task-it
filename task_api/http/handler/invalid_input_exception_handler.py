@@ -5,8 +5,6 @@ from task_api.config.logger.logger import Logger
 from task_api.exception.invalid_input_exception import InvalidInputException
 from task_api.http.response.exception_response import ExceptionResponse
 
-
-
 logger = Logger.get_logger()
 
 
@@ -25,4 +23,3 @@ async def invalid_input_exception_handler(
             request=request.url.path,
         ).model_dump(),
     )
-    

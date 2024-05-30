@@ -9,7 +9,6 @@ class UserResponseAssembler:
             username=str(user.get_username()),
             email=str(user.get_email()),
         )
-    
+
     def users_to_response(self, users: list[User]):
         return [self.user_to_response(user) for user in users]
-    

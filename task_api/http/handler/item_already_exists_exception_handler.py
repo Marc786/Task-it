@@ -5,8 +5,6 @@ from task_api.config.logger.logger import Logger
 from task_api.exception.item_already_exists_exception import ItemAlreadyExistsException
 from task_api.http.response.exception_response import ExceptionResponse
 
-
-
 logger = Logger.get_logger()
 
 
@@ -25,4 +23,3 @@ async def item_already_exists_exception_handler(
             request=request.url.path,
         ).model_dump(),
     )
-    

@@ -2,17 +2,23 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from task_api.exception.item_already_exists_exception import ItemAlreadyExistsException
-from task_api.health import router as health_router
-from task_api.core.user.api.user_resource import router as user_router
+from task_api.config.context.application_context import ApplicationContext
 from task_api.config.logger.logger import Logger
 from task_api.config.service_locator import ServiceLocator
-from task_api.config.context.application_context import ApplicationContext
-from task_api.exception.invalid_input_exception import InvalidInputException
+from task_api.core.user.api.user_resource import router as user_router
 from task_api.exception.configuration_exception import ConfigurationException
-from task_api.http.handler.item_already_exists_exception_handler import item_already_exists_exception_handler
-from task_api.http.handler.server_config_exception_handler import server_config_exception_handler
-from task_api.http.handler.invalid_input_exception_handler import invalid_input_exception_handler
+from task_api.exception.invalid_input_exception import InvalidInputException
+from task_api.exception.item_already_exists_exception import ItemAlreadyExistsException
+from task_api.health import router as health_router
+from task_api.http.handler.invalid_input_exception_handler import (
+    invalid_input_exception_handler,
+)
+from task_api.http.handler.item_already_exists_exception_handler import (
+    item_already_exists_exception_handler,
+)
+from task_api.http.handler.server_config_exception_handler import (
+    server_config_exception_handler,
+)
 from task_api.http.handler.server_exception_handler import server_exception_handler
 
 logger = Logger.get_logger()
@@ -58,4 +64,6 @@ def add_exception_handlers(app: FastAPI):
     app.add_exception_handler(Exception, server_exception_handler)
     app.add_exception_handler(ConfigurationException, server_config_exception_handler)
     app.add_exception_handler(InvalidInputException, invalid_input_exception_handler)
-    app.add_exception_handler(ItemAlreadyExistsException, item_already_exists_exception_handler)
+    app.add_exception_handler(
+        ItemAlreadyExistsException, item_already_exists_exception_handler
+    )

@@ -7,7 +7,7 @@ class User:
     __id: UserId
     __username: Username
     __email: Email
-    
+
     def __init__(self, id: UserId, username: Username, email: Email):
         self.__id = id
         self.__username = username
@@ -21,7 +21,7 @@ class User:
 
     def get_email(self) -> Email:
         return self.__email
-    
+
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, User):
             return False

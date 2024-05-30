@@ -6,7 +6,7 @@ from task_api.core.user.domain.user_repository import UserRepository
 class UserService:
     __user_repository: UserRepository
     __user_factory: UserFactory
-    
+
     def __init__(
         self,
         user_repository: UserRepository,
@@ -23,9 +23,9 @@ class UserService:
 
     def create_user(self, email: str, username: str) -> User:
         if self.__user_repository.find_by_username(username):
-            raise ValueError(f'User with username {username} already exists')
-        
+            raise ValueError(f"User with username {username} already exists")
+
         new_user = self.__user_factory.create_user(email, username)
         self.__user_repository.save(new_user)
-        
+
         return new_user

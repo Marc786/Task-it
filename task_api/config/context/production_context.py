@@ -1,10 +1,10 @@
-
 from task_api.config.context.application_context import ApplicationContext
 from task_api.config.context.environment import Environment
 from task_api.config.logger.logger import Logger
-from task_api.core.user.api.config.user_dependency_factory import create_in_memory_user_repository
+from task_api.core.user.api.config.user_dependency_factory import (
+    create_in_memory_user_repository,
+)
 from task_api.core.user.domain.user_repository import UserRepository
-
 
 logger = Logger.get_logger()
 

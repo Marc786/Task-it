@@ -8,7 +8,7 @@ logger = Logger.get_logger()
 
 
 async def server_config_exception_handler(
-        request: Request, exc: Exception
+    request: Request, exc: Exception
 ) -> JSONResponse:
     logger.info(
         f"An error occurred due to the specific server configuration ({request.method} {request.url.path})",

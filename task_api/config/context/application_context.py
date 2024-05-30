@@ -5,15 +5,12 @@ from task_api.config.logger.logger import Logger
 from task_api.config.service_locator import ServiceLocator
 from task_api.core.user.domain.user_repository import UserRepository
 
-
 logger = Logger.get_logger()
 
 
 class ApplicationContext(ABC):
 
-    def __init__(
-        self, env: Environment, server_host: str, server_port: int
-    ):
+    def __init__(self, env: Environment, server_host: str, server_port: int):
         self.env = env
         self.server_host = server_host
         self.server_port = server_port
