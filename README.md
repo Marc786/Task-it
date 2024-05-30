@@ -1,7 +1,7 @@
 # Fastapi-template
-A python project template with fastapi. This template is intented for Rich type projects, but you can easily adapt it for more CRUD type projects.
+A small python project model with fastapi. This project model is intented for Rich type projects, but you can easily adapt it for more CRUD type projects.
 
-I use a basic task api as an example.
+I use a basic task api as an example for the model.
 
 # Project setup
 
