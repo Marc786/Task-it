@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "fastapi-template"
+name = "task_api"
 version = "0.1.0"
 description = ""
 authors = ["Marc-Antoine Marier <marc-antoine.marier.1@ulaval.ca>"]
 readme = "README.md"
-packages = [{include = "fastapi_template"}]
+packages = [{include = "task_api", from = "."}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
