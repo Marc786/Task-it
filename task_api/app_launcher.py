@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from task_api.config.context.application_context import ApplicationContext
 from task_api.config.logger.logger import Logger
 from task_api.config.service_locator import ServiceLocator
-from task_api.core import router as user_router
+from task_api.core.account.api.account_resource import router as user_router
 from task_api.exception.configuration_exception import ConfigurationException
 from task_api.exception.invalid_input_exception import InvalidInputException
 from task_api.exception.item_already_exists_exception import ItemAlreadyExistsException

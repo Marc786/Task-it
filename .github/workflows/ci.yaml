@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.12
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cache/pip
+          ~/.cache/pypoetry
+        key: ${{ runner.os }}-pip-poetry-${{ hashFiles('**/pyproject.toml', '**/poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-poetry-
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        export PATH="$HOME/.poetry/bin:$PATH"
+
+    - name: Install project dependencies
+      run: poetry install
+
+    - name: Run Black
+      run: poetry run black .
+
+    - name: Run Pylint
+      run: poetry run pylint .
+
+    - name: Run tests
+      run: poetry run pytest

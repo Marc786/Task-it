@@ -2,7 +2,9 @@ from task_api.config.service_locator import ServiceLocator
 from task_api.core.account.application.account_service import AccountService
 from task_api.core.account.domain.account_factory import AccountFactory
 from task_api.core.account.domain.account_repository import AccountRepository
-from task_api.core.account.infra.InMemoryAccountRepository import InMemoryAccountRepository
+from task_api.core.account.infra.InMemoryAccountRepository import (
+    InMemoryAccountRepository,
+)
 
 
 def create_account_service():

@@ -1,8 +1,8 @@
 import re
 
-from task_api.core.account.domain.email import Email
 from task_api.core.account.domain.account import Account
 from task_api.core.account.domain.account_id import AccountId
+from task_api.core.account.domain.email import Email
 from task_api.core.account.domain.username import Username
 
 

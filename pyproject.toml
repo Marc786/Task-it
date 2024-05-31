@@ -23,13 +23,13 @@ coverage = "^7.5.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.ruff]
+[tool.lint.ruff]
 target-version = "py312"
 select = ["F", "E", "W", "I001", "ASYNC", "T20"]
 ignore = ["E711", "E712", "E722", "E501"]
 fixable = ["F541", "E731", "I", "W", "F"]
 
-[tool.ruff.isort]
+[tool.lint.ruff.isort]
 known-third-party = ["xpectio_schemas"]
 
 [tool.coverage.run]
