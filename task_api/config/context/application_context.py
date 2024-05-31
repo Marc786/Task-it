@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from task_api.config.context.environment import Environment
 from task_api.config.logger.logger import Logger
 from task_api.config.service_locator import ServiceLocator
-from task_api.core.user.domain.user_repository import UserRepository
+from task_api.core.account.domain.account_repository import AccountRepository
 
 logger = Logger.get_logger()
 
@@ -20,7 +20,7 @@ class ApplicationContext(ABC):
         logger.info("Initializing dependencies...")
 
         dependencies = [
-            (UserRepository, self.create_user_repository()),
+            (AccountRepository, self.create_user_repository()),
         ]
 
         ServiceLocator.clear()
@@ -33,5 +33,5 @@ class ApplicationContext(ABC):
         logger.info("Application's dependencies initialized successfully")
 
     @abstractmethod
-    def create_user_repository(self) -> UserRepository:
+    def create_user_repository(self) -> AccountRepository:
         pass

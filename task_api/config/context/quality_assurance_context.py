@@ -1,9 +1,9 @@
 from task_api.config.context.application_context import ApplicationContext
 from task_api.config.context.environment import Environment
-from task_api.core.user.api.config.user_dependency_factory import (
+from task_api.core import (
     create_in_memory_user_repository,
 )
-from task_api.core.user.domain.user_repository import UserRepository
+from task_api.core.account.domain.account_repository import AccountRepository
 
 
 class QualityAssuranceContext(ApplicationContext):
@@ -17,5 +17,5 @@ class QualityAssuranceContext(ApplicationContext):
     def initialize_dependencies(self):
         super().initialize_dependencies()
 
-    def create_user_repository(self) -> UserRepository:
+    def create_user_repository(self) -> AccountRepository:
         return create_in_memory_user_repository()

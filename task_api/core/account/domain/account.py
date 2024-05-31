@@ -1,19 +1,19 @@
-from task_api.core.user.domain.email import Email
-from task_api.core.user.domain.user_id import UserId
-from task_api.core.user.domain.username import Username
+from task_api.core.account.domain.email import Email
+from task_api.core.account.domain.account_id import AccountId
+from task_api.core.account.domain.username import Username
 
 
-class User:
-    __id: UserId
+class Account:
+    __id: AccountId
     __username: Username
     __email: Email
 
-    def __init__(self, id: UserId, username: Username, email: Email):
+    def __init__(self, id: AccountId, username: Username, email: Email):
         self.__id = id
         self.__username = username
         self.__email = email
 
-    def get_id(self) -> UserId:
+    def get_id(self) -> AccountId:
         return self.__id
 
     def get_username(self) -> Username:
@@ -23,6 +23,6 @@ class User:
         return self.__email
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, User):
+        if not isinstance(other, Account):
             return False
         return self.__id == other.__id
