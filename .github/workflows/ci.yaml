@@ -40,10 +40,10 @@ jobs:
       run: poetry install
 
     - name: Run Black
-      run: poetry run black .
+      run: poetry run black . --check
 
-    - name: Run Pylint
-      run: poetry run pylint .
+    - name: Run Ruff
+      run: poetry run ruff check .    
 
     - name: Run tests
       run: poetry run pytest
