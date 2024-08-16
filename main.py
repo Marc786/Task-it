@@ -1,11 +1,11 @@
 import argparse
 
-from task_api import app_launcher
-from task_api.config.context.application_context import ApplicationContext, Environment
-from task_api.config.context.development_context import DevelopmentContext
-from task_api.config.context.production_context import ProductionContext
-from task_api.config.logger import logger_type
-from task_api.config.logger.logger import Logger
+from task_it import app_launcher
+from task_it.config.context.application_context import ApplicationContext, Environment
+from task_it.config.context.development_context import DevelopmentContext
+from task_it.config.context.production_context import ProductionContext
+from task_it.config.logger import logger_type
+from task_it.config.logger.logger import Logger
 
 logger = Logger.get_logger()
 
