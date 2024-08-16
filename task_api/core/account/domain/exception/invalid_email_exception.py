@@ -1,2 +1,0 @@
-class InvalidEmailException(Exception):
-    pass

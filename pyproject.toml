@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "task_api"
+name = "task_it"
 version = "0.1.0"
 description = ""
 authors = ["Marc-Antoine Marier <marc-antoine.marier.1@ulaval.ca>"]
 readme = "README.md"
-packages = [{include = "task_api", from = "."}]
+packages = [{include = "task_it", from = "."}]
 
 [tool.poetry.dependencies]
 python = "^3.11"

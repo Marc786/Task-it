@@ -1,13 +1,14 @@
 # Fastapi project model
 A small python project model with fastapi. This project model is intented for Rich type projects, but you can easily adapt it for more CRUD type projects.
+I am using a hexagonal architecture for the project model.
 
-I use a basic task api as an example for the model.
+I use a simple task application that I named Taskit as an example for the model.
 
 # Project setup
 
 ## Initialize project with poetry
 ```bash
-poetry new fastapi-template
+poetry new task-it
 ```
 
 You can then create the repository and push the code.
