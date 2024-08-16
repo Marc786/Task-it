@@ -12,7 +12,7 @@ tests:
 
 .PHONY: coverage
 coverage:
-	@ poetry run pytest --cov=diagnozip --cov-report=html:tests-reports/coverage
+	@ poetry run pytest --cov=task_it --cov-report=html:tests-reports/coverage
 
 .PHONY: black
 black:
